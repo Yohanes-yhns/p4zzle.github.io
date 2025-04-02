@@ -27,6 +27,7 @@ p {
     color: #414c6b;
 }
 .input {
+    font-size: 16px;
     font-weight: 500;
     border: none;
     outline: none;
