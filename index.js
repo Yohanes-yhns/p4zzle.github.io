@@ -122,7 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const usernameInput = document.querySelector(".input"); 
+    const usernameInput = document.getElementById("usernameInput");
+    const passwordInput = document.getElementById("passwordInput");
     const enterButton = document.getElementById("enterBtn");
     const greetingText = document.getElementById("greeting"); 
     const grid = document.getElementById("grid");
@@ -138,19 +139,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     enterButton.addEventListener("click", function () {
         const username = usernameInput.value.trim(); 
-        if (username) {
+        const password = passwordInput.value.trim();
+    
+        if (username && password) {
             greetingText.textContent = `Selamat bermain, ${username}`; 
             usernameInput.style.display = "none"; 
+            passwordInput.style.display = "none";
             enterButton.style.display = "none";
             text.style.display = "none";
             cardRank.style.display = "none";
             closeButton.style.display = "inline-flex";
-
+    
             startGame(); 
         } else {
-            alert("Harap masukkan username dengan benar!"); 
+            alert("Harap masukkan username dan password dengan benar!"); 
         }
     });
+    
 
     grid.style.visibility = "hidden"; 
 });
+
