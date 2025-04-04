@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const gridSize = 4;
     const grid = document.getElementById("grid");
     let cells = [];
-    let board = Array(gridSize).fill().map(() => Array(gridSize).fill(0));
+    window.board = Array(gridSize).fill().map(() => Array(gridSize).fill(0));
     let startX, startY, endX, endY;
     
     function createGrid() {
@@ -126,7 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const enterButton = document.getElementById("enterBtn");
     const greetingText = document.getElementById("greeting"); 
     const grid = document.getElementById("grid");
-    const text = document.getElementById("text"); 
+    const text = document.getElementById("text");
+    const cardRank = document.getElementById("cardRank");
+    const closeButton = document.getElementById("enterBtn-close");
 
     function startGame() {
         
@@ -137,10 +139,12 @@ document.addEventListener("DOMContentLoaded", function () {
     enterButton.addEventListener("click", function () {
         const username = usernameInput.value.trim(); 
         if (username) {
-            greetingText.textContent = `Selamat bermain, ${username}!`; 
+            greetingText.textContent = `Selamat bermain, ${username}`; 
             usernameInput.style.display = "none"; 
             enterButton.style.display = "none";
-            text.style.display = "none"; 
+            text.style.display = "none";
+            cardRank.style.display = "none";
+            closeButton.style.display = "inline-flex";
 
             startGame(); 
         } else {
@@ -150,4 +154,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     grid.style.visibility = "hidden"; 
 });
-

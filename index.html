@@ -18,8 +18,12 @@
     <button class="btn" id="enterBtn"><i class="animation"></i>ENTER<i class="animation"></i>
     </button>
     </div>
+
+    <div class="card" id="cardRank">
+        <h2>Rank list</h2>
+    </div>
     
-    <p id="greeting"></p> 
+    <p id="greeting" class="greeting"></p> 
 
     <div id="container-stars">
       <div id="stars"></div>
@@ -34,7 +38,22 @@
     <div class="container">
         <div class="grid" id="grid"></div>
     </div>
+
+    <div>
+        <a class="btn-close" id="enterBtn-close" href="index.html"><i class="animation-close"></i>Kembali<i class="animation-close"></i>
+        </a>
+    </div>
+
+    <div id="gameOverPopup" class="popup">
+        <div class="popup-content">
+          <h2>Game Over!</h2>
+          <p id="finalScore" class="finalScore"></p>
+          <button>Main Lagi</button>
+        </div>
+    </div>
+      
     
 <script src="index.js"></script>
+<script src="gameover.js"></script>
 </body>
 </html>
