@@ -38,7 +38,7 @@
   
   /* ====== FORM & INPUT ====== */
   .input {
-    font-size: 17px;
+    font-size: 18px;
     width: 100%;
     max-width: 300px;
     font-weight: 500;
@@ -232,8 +232,7 @@
     }
   
     .input {
-      font-size: 17px;
-      padding: 0.75rem;
+      font-size: 20px;
     }
   
     .btn,
