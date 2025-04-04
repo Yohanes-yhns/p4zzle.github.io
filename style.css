@@ -1,42 +1,53 @@
-body {
+/* ====== RESET DASAR ====== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     background-color: #faf8ef;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-}
-h1 {
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* ====== HEADER & TEKS ====== */
+  h1 {
     color: #414c6b;
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-bottom: 10px;
-    margin-bottom: 10px;
-}
-a {
+  }
+  
+  a {
     margin-bottom: 10px;
     font-weight: 600;
     color: #414c6b;
-}
-p {
-    font-size: 20px;
+  }
+  
+  p, .greeting {
+    font-size: 1.25rem;
     font-weight: 700;
     color: #414c6b;
-}
-.input {
-    font-size: 16px;
+  }
+  
+  /* ====== FORM & INPUT ====== */
+  .input {
+    font-size: 1rem;
     width: 100%;
     max-width: 300px;
     font-weight: 500;
     border: none;
     outline: none;
     border-radius: 15px;
-    padding: 1em;
+    padding: 1rem;
     background-color: #ccc;
-    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
     transition: 300ms ease-in-out;
     margin-bottom: 20px;
   }
@@ -44,146 +55,102 @@ p {
   .input:focus {
     background-color: white;
     transform: scale(1.05);
-    box-shadow: 13px 13px 100px #969696,
-               -13px -13px 100px #ffffff;
+    box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
   }
-.btn {
-    outline: 0;
+  
+  /* ====== BUTTONS ====== */
+  .btn,
+  .btn-close {
     display: inline-flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background: #414c6b;
     min-width: 200px;
     border: 0;
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
-    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 16px 20px;
     color: #fff;
-    font-size: 12px;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    overflow: hidden;
     cursor: pointer;
-    margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
-    font-size: 17px;
+    margin-bottom: 10px;
   }
   
-  .btn:hover {
-    opacity: .95;
+  .btn:hover,
+  .btn-close:hover {
+    opacity: 0.95;
   }
   
-  .btn .animation {
-    border-radius: 100%;
-    animation: ripple 0.6s linear infinite;
-  }
-
   .btn-close {
-    outline: 0;
     display: none;
-    align-items: center;
-    justify-content: space-between;
-    background: #414c6b;
-    min-width: 200px;
-    border: 0;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
-    box-sizing: border-box;
-    padding: 16px 20px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    overflow: hidden;
-    cursor: pointer;
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 17px;
     margin-top: 15px;
     text-decoration: none;
   }
   
-  .btn-close:hover {
-    opacity: .95;
-  }
-  
+  /* ====== ANIMASI BUTTON ====== */
+  .btn .animation,
   .btn-close .animation-close {
     border-radius: 100%;
     animation: ripple 0.6s linear infinite;
   }
   
-  @keyframes ripple {
-    0% {
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
-    }
   
-    100% {
-      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
-    }
-  }
-
-.card {
+  /* ====== CARD ====== */
+  .card {
     width: 250px;
     height: 70px;
     background: #414c6b;
     position: relative;
     display: flex;
-    place-content: center;
-    place-items: center;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     border-radius: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
   }
   
   .card h2 {
     z-index: 1;
     color: white;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   
   .card::before {
     content: '';
     position: absolute;
     width: 100px;
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 1));
     height: 130%;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 1));
     animation: rotBGimg 3s linear infinite;
-    transition: all 0.2s linear;
   }
   
   @keyframes rotBGimg {
-    from {
-      transform: rotate(0deg);
-    }
-  
-    to {
-      transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
   
   .card::after {
     content: '';
     position: absolute;
     background: #414c6b;
-    ;
     inset: 5px;
     border-radius: 15px;
   }
   
-.greeting {
-    font-size: 20px;
-    font-weight: 700;
-    color: #414c6b;
-}
-.container {
+  /* ====== GRID GAME ====== */
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.grid {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -193,61 +160,107 @@ p {
     border-radius: 10px;
     width: min(90vw, 400px);
     height: min(90vw, 400px);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     touch-action: none;
-}
-.cell {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cell {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 4vw, 2rem);
     font-weight: bold;
     background: #5baeb7;
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
     color: #353e57;
-}
-
-.popup {
+  }
+  
+  /* ====== POPUP ====== */
+  .popup {
     display: none;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
     z-index: 10;
-}
-
-.popup-content {
+    padding: 30px;
+  }
+  
+  .popup-content {
     background: white;
-    padding: 70px;
+    padding: 40px 20px;
     border-radius: 15px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-}
-
-.popup-content h2 {
-    margin: 0 0 10px;
-    font-size: 30px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .popup-content h2 {
+    margin-bottom: 10px;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     color: #9c0000;
     font-weight: 800;
-}
-.finalScore {
-    font-size: 30px;
+  }
+  
+  .finalScore {
+    font-size: 1.5rem;
     font-weight: bold;
     color: #414c6b;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.popup-content button {
-    margin-top: 40px;
+    margin: 20px 0;
+  }
+  
+  .popup-content button {
+    margin-top: 30px;
     padding: 10px 20px;
     background: #414c6b;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: 600;
-}
+  }
+  
+  /* ====== RESPONSIVENESS ====== */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .input {
+      font-size: 0.9rem;
+      padding: 0.75rem;
+    }
+  
+    .btn,
+    .btn-close {
+      min-width: 150px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+    }
+  
+    .popup-content {
+      padding: 30px 15px;
+    }
+  
+    .card {
+      width: 70%;
+      height: auto;
+      padding: 10px;
+    }
+  
+    .grid {
+      gap: 8px;
+      width: 90vw;
+      height: 90vw;
+    }
+  
+    .cell {
+      font-size: clamp(1rem, 5vw, 1.8rem);
+    }
+  }
+  
